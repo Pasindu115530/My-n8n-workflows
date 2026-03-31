@@ -1,0 +1,224 @@
+{
+    "name": "My workflow 4",
+    "nodes": [
+        {
+            "parameters": {
+                "updates": [
+                    "message"
+                ],
+                "additionalFields": {}
+            },
+            "type": "n8n-nodes-base.telegramTrigger",
+            "typeVersion": 1.2,
+            "position": [
+                -448,
+                -128
+            ],
+            "id": "abe150b5-42a9-4c4a-b4ca-f923c6e92a89",
+            "name": "Telegram Trigger",
+            "webhookId": "1ff9cbb6-f3a0-4f5f-b8ce-1b681ce26554",
+            "credentials": {
+                "telegramApi": {
+                    "id": "N4xk8MDNZwudyhAL",
+                    "name": "Telegram account 2"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "append",
+                "documentId": {
+                    "__rl": true,
+                    "value": "160w681JuWuSyMmoJ730uqPXHLNDOu6QIAWk9ehwEWxw",
+                    "mode": "list",
+                    "cachedResultName": "lms_foc",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/160w681JuWuSyMmoJ730uqPXHLNDOu6QIAWk9ehwEWxw/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "student details",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/160w681JuWuSyMmoJ730uqPXHLNDOu6QIAWk9ehwEWxw/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Name": "={{ $json.data['What is Your Name?'] }}",
+                        "Regsiter Number": "={{ $json.data['What is your Registraion number'] }}",
+                        "Index Number": "={{ $json.data['enter Index number'] }}",
+                        "Phone Number": "={{ $json.data['Phone number'] }}",
+                        "Chat Id": "={{ $('Telegram Trigger').item.json.message.from.id }}"
+                    },
+                    "matchingColumns": [],
+                    "schema": [
+                        {
+                            "id": "Name",
+                            "displayName": "Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Regsiter Number",
+                            "displayName": "Regsiter Number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Index Number",
+                            "displayName": "Index Number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Phone Number",
+                            "displayName": "Phone Number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Chat Id",
+                            "displayName": "Chat Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "DepartMent",
+                            "displayName": "DepartMent",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                16,
+                -128
+            ],
+            "id": "d4b780cd-3f93-480a-a4f9-3a748a2fde36",
+            "name": "Append row in sheet",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "sendAndWait",
+                "chatId": "={{ $json.message.from.id }}",
+                "message": "Send Me details",
+                "responseType": "customForm",
+                "formFields": {
+                    "values": [
+                        {
+                            "fieldLabel": "What is Your Name?",
+                            "placeholder": "Pasindu",
+                            "requiredField": true
+                        },
+                        {
+                            "fieldLabel": "What is your Registraion number",
+                            "placeholder": "FC2233",
+                            "requiredField": true
+                        },
+                        {
+                            "fieldLabel": "enter Index number",
+                            "requiredField": true
+                        },
+                        {
+                            "fieldLabel": "Phone number",
+                            "fieldType": "number",
+                            "requiredField": true
+                        }
+                    ]
+                },
+                "options": {
+                    "responseFormCustomCss": ":root {\n\t--font-family: 'Open Sans', sans-serif;\n\t--font-weight-normal: 400;\n\t--font-weight-bold: 600;\n\n\t/* Typography */\n\t--font-size-body: 14px;\n\t--font-size-header: 22px;\n\t--font-size-label: 13px;\n\n\t/* 🌈 Modern Colors */\n\t--color-bg-gradient: linear-gradient(135deg, #667eea, #764ba2);\n\t--color-card-bg: rgba(255, 255, 255, 0.75);\n\t--color-glass-border: rgba(255, 255, 255, 0.3);\n\t--color-text-main: #2d2e32;\n\t--color-text-sub: #6b6f76;\n\n\t--color-primary: #6c63ff;\n\t--color-primary-hover: #5a52e0;\n\n\t--color-input-bg: rgba(255,255,255,0.6);\n\t--color-input-border: #dcdfea;\n\t--color-focus: #6c63ff;\n\n\t--color-error: #ff4d4f;\n\n\t/* Radius & Shadows */\n\t--radius-card: 16px;\n\t--radius-input: 10px;\n\t--shadow-soft: 0 8px 30px rgba(0,0,0,0.08);\n}\n\n/* 🌍 Background */\nbody {\n\tmargin: 0;\n\tfont-family: var(--font-family);\n\tbackground: var(--color-bg-gradient);\n\tmin-height: 100vh;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n\n/* 💎 Card (Glass effect) */\n.container {\n\twidth: 420px;\n\tpadding: 30px;\n\tborder-radius: var(--radius-card);\n\tbackground: var(--color-card-bg);\n\tbackdrop-filter: blur(12px);\n\tborder: 1px solid var(--color-glass-border);\n\tbox-shadow: var(--shadow-soft);\n}\n\n/* 🧾 Header */\nh1 {\n\tfont-size: var(--font-size-header);\n\tfont-weight: var(--font-weight-bold);\n\tcolor: var(--color-text-main);\n\tmargin-bottom: 10px;\n}\n\np {\n\tcolor: var(--color-text-sub);\n\tfont-size: var(--font-size-body);\n\tmargin-bottom: 20px;\n}\n\n/* 🏷 Labels */\nlabel {\n\tfont-size: var(--font-size-label);\n\tcolor: var(--color-text-sub);\n\tdisplay: block;\n\tmargin-bottom: 6px;\n}\n\n/* ✏️ Inputs */\ninput {\n\twidth: 100%;\n\tpadding: 12px;\n\tborder-radius: var(--radius-input);\n\tborder: 1px solid var(--color-input-border);\n\tbackground: var(--color-input-bg);\n\tfont-size: 14px;\n\toutline: none;\n\ttransition: all 0.3s ease;\n}\n\ninput:focus {\n\tborder-color: var(--color-focus);\n\tbox-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);\n\tbackground: #fff;\n}\n\n/* 🚀 Button */\nbutton {\n\twidth: 100%;\n\theight: 48px;\n\tborder: none;\n\tborder-radius: var(--radius-input);\n\tbackground: var(--color-primary);\n\tcolor: white;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\tcursor: pointer;\n\ttransition: all 0.3s ease;\n\tbox-shadow: 0 4px 14px rgba(108, 99, 255, 0.4);\n}\n\nbutton:hover {\n\tbackground: var(--color-primary-hover);\n\ttransform: translateY(-1px);\n\tbox-shadow: 0 6px 18px rgba(108, 99, 255, 0.5);\n}\n\n/* ❌ Error */\n.error {\n\tcolor: var(--color-error);\n\tfont-size: 12px;\n\tmargin-top: 5px;\n}\n\n/* 🔗 Link */\na {\n\tcolor: var(--color-primary);\n\ttext-decoration: none;\n\tfont-size: 13px;\n}\n\na:hover {\n\ttext-decoration: underline;\n}",
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                -224,
+                -128
+            ],
+            "id": "574b0947-dccb-41d7-8d70-a1d4e1823502",
+            "name": "Send message and wait for response",
+            "webhookId": "bd20f094-5320-4063-b4c3-47ab695af667",
+            "credentials": {
+                "telegramApi": {
+                    "id": "N4xk8MDNZwudyhAL",
+                    "name": "Telegram account 2"
+                }
+            }
+        }
+    ],
+    "pinData": {},
+    "connections": {
+        "Telegram Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Send message and wait for response",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Append row in sheet": {
+            "main": [
+                []
+            ]
+        },
+        "Send message and wait for response": {
+            "main": [
+                [
+                    {
+                        "node": "Append row in sheet",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {
+        "executionOrder": "v1",
+        "binaryMode": "separate"
+    },
+    "versionId": "4ff90fbd-0bf6-4244-9aca-9b16c1dfb377",
+    "meta": {
+        "templateCredsSetupCompleted": true,
+        "instanceId": "01020aac0f4ad9add3ef1a6dcc6dfb9bedf97851932f4544d68e71020a50503c"
+    },
+    "id": "zdsvRuM5VzSoHFLr",
+    "tags": []
+}
