@@ -1,0 +1,3217 @@
+{
+    "name": "Get Thread ID from Message-ID",
+    "nodes": [
+        {
+            "parameters": {
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "filtersUI": {
+                    "values": [
+                        {
+                            "lookupColumn": " First Mail ",
+                            "lookupValue": "Enter"
+                        }
+                    ]
+                },
+                "options": {
+                    "returnFirstMatch": true
+                }
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -1312,
+                -256
+            ],
+            "id": "dc832cd3-90b3-44f0-8c4f-891a0a765d9a",
+            "name": "Get Pending Rows",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "download",
+                "fileId": {
+                    "__rl": true,
+                    "value": "1bistNSyEn3oMkMWXnRu2Nn3ny6wxsITP",
+                    "mode": "list",
+                    "cachedResultName": "NEXA Project Proposal (1).pdf",
+                    "cachedResultUrl": "https://drive.google.com/file/d/1bistNSyEn3oMkMWXnRu2Nn3ny6wxsITP/view?usp=drivesdk"
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleDrive",
+            "typeVersion": 3,
+            "position": [
+                -1104,
+                -256
+            ],
+            "id": "4f4d3843-b61b-4a98-b2d0-70dabe0eae3f",
+            "name": "Download PDF",
+            "executeOnce": true,
+            "credentials": {
+                "googleDriveOAuth2Api": {
+                    "id": "4swS1a5vxe1E6dI7",
+                    "name": "Google Drive account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "sendTo": "={{ $json['Company Email'] }}",
+                "subject": "Sponsorship Opportunity \n NEXA  ACS, University of Sri Jayewardenepura",
+                "message": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"> <head> <title>NEXA Sponsorship Invitation</title> <meta charset=\"UTF-8\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /> <!--[if !mso]>--> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /> <!--<![endif]--> <meta name=\"x-apple-disable-message-reformatting\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /> <meta name=\"format-detection\" content=\"telephone=no, date=no, address=no, email=no, url=no\" /> <style type=\"text/css\"> /* ===== RESET ===== */ body, table, td, p, a, li { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; } table, td { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; } img { border:0; height:auto; line-height:100%; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; } a { text-decoration:none; } a[x-apple-data-detectors] { color:inherit!important; text-decoration:none!important; } u + #body a { color:inherit; text-decoration:none; } .ExternalClass { width:100%; } .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass td, .ExternalClass div { line-height:100%; }  /* ===== BASE ===== */ body { background-color:#FFFFFF; min-width:100%; } .email-wrapper { background-color:#242424; width:100%; } .email-card { background-color:#F8F8F8; width:100%; max-width:600px; margin:0 auto; }  /* ===== MOBILE ===== */ @media only screen and (max-width:600px) {   .email-wrapper { padding:0!important; }   .outer-spacer { height:20px!important; }   .email-card { width:100%!important; max-width:100%!important; }   .card-pad { padding:0 20px 30px 20px!important; }   .header-logo-row td { display:block!important; width:100%!important; text-align:center!important; }   .nexa-logo-cell { text-align:center!important; padding:15px 0 0 0!important; }   .acs-logo-cell { text-align:center!important; padding:10px 0 0 0!important; }   .acs-logo-cell img { margin:0 auto!important; }   .content-cell { width:100%!important; padding:0 0 12px 0!important; }   .content-cell p, .content-cell ul { font-size:14px!important; line-height:22px!important; }   .footer-pad { padding:25px 20px!important; }   .contact-row td { display:block!important; width:100%!important; text-align:center!important; padding:0 0 16px 0!important; }   .footer-inner { width:100%!important; } } @media only screen and (max-width:480px) {   .content-cell p { font-size:13px!important; line-height:21px!important; }   .section-title { font-size:14px!important; } } </style> <!--[if !mso]>--> <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,800;1,400&display=swap\" rel=\"stylesheet\" type=\"text/css\" /> <!--<![endif]--> <!--[if mso]> <xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml> <![endif]--> </head>  <body id=\"body\" style=\"margin:0;padding:0;background-color:#242424;width:100%;\"> <div class=\"email-wrapper\" style=\"background-color:#242424;width:100%;\">  <!-- Outer top spacer --> <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"> <tr><td class=\"outer-spacer\" style=\"height:40px;line-height:40px;font-size:1px;\">&nbsp;</td></tr> </table>  <!-- ===== MAIN CARD ===== --> <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"> <tr><td align=\"center\" style=\"padding:0 10px;\"> <table role=\"presentation\" class=\"email-card\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" style=\"width:600px;max-width:600px;background-color:#F8F8F8;\"> <tr><td class=\"card-pad\" style=\"padding:0 50px 40px 50px;\">    <!-- HEADER: NEXA Logo + ACS Logo -->   <table role=\"presentation\" class=\"header-logo-row\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">   <tr>     <td class=\"nexa-logo-cell\" valign=\"middle\" style=\"padding:20px 0 0 0;width:80px;\">       <img src=\"data:image/png;base64,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\" alt=\"NEXA\" width=\"60\" style=\"display:block;width:60px;max-width:60px;height:auto;border:0;\" />     </td>     <td width=\"20\" style=\"width:20px;\">&nbsp;</td>     <td class=\"acs-logo-cell\" valign=\"middle\" style=\"padding-top:10px;text-align:right;\">       <img src=\"data:image/png;base64,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\" alt=\"Association of Computing Students - University of Sri Jayewardenepura\" width=\"280\" style=\"display:block;width:280px;max-width:280px;height:auto;border:0;margin:0 0 0 auto;\" />     </td>   </tr>   </table>    <!-- Spacer -->   <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">   <tr><td style=\"height:24px;line-height:24px;font-size:1px;\">&nbsp;</td></tr>   </table>    <!-- BODY CONTENT -->   <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">      <!-- Dear Sir/Madam -->     <tr><td class=\"content-cell\" style=\"padding:0 0 12px 0;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">Dear Sir/Madam,</p>     </td></tr>      <!-- Greetings -->     <tr><td class=\"content-cell\" style=\"padding:0 0 12px 0;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">Greetings from the <strong>Association of Computing Students (ACS), University of Sri Jayewardenepura</strong>.</p>     </td></tr>      <!-- Para 2 -->     <tr><td class=\"content-cell\" style=\"padding:0 0 12px 0;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">We are excited to introduce <strong>NEXA</strong>, a one&#8209;day <strong>Tech Talk Series</strong> bringing together university students, technology professionals, and industry experts to share insights on emerging technologies and real&#8209;world industry practices.</p>     </td></tr>      <!-- Para 3 -->     <tr><td class=\"content-cell\" style=\"padding:0 0 16px 0;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">We would be honored to have your organization join us as a <strong>Sponsor or Official Partner</strong>. Partnering with NEXA provides valuable <strong>brand visibility, recognition within the university community, and direct engagement with talented undergraduate students</strong>.</p>     </td></tr>      <!-- Sponsorship Packages title -->     <tr><td class=\"content-cell\" style=\"padding:8px 0 6px 0;\">       <p class=\"section-title\" style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:700;line-height:22px;color:#00496C;\">Sponsorship Packages</p>     </td></tr>      <!-- Sponsorship list -->     <tr><td class=\"content-cell\" style=\"padding:0 0 16px 0;\">       <ul style=\"margin:0;padding-left:18px;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">         <li style=\"padding:2px 0;\">Title Sponsor &#8211; LKR 100,000</li>         <li style=\"padding:2px 0;\">Platinum Sponsor &#8211; LKR 75,000</li>         <li style=\"padding:2px 0;\">Gold Sponsor &#8211; LKR 50,000</li>         <li style=\"padding:2px 0;\">Silver Sponsor &#8211; LKR 30,000</li>         <li style=\"padding:2px 0;\">Bronze Sponsor &#8211; LKR 25,000</li>       </ul>     </td></tr>      <!-- Partnership title -->     <tr><td class=\"content-cell\" style=\"padding:8px 0 6px 0;\">       <p class=\"section-title\" style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:700;line-height:22px;color:#00496C;\">Official Partnership Opportunities</p>     </td></tr>      <!-- Partnership list -->     <tr><td class=\"content-cell\" style=\"padding:0 0 16px 0;\">       <ul style=\"margin:0;padding-left:18px;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">         <li style=\"padding:2px 0;\">Official Food &amp; Beverage Partner</li>         <li style=\"padding:2px 0;\">Official Photography &amp; Videography Partner</li>         <li style=\"padding:2px 0;\">Official Gift Partner</li>         <li style=\"padding:2px 0;\">Official Technical Partner</li>         <li style=\"padding:2px 0;\">Official Media Partner</li>         <li style=\"padding:2px 0;\">Official Printing Partner</li>       </ul>     </td></tr>      <!-- Closing para -->     <tr><td class=\"content-cell\" style=\"padding:0 0 12px 0;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">Please find the attached <strong>sponsorship proposal</strong> for more details. We would greatly appreciate the opportunity to collaborate with your organization to make <strong>NEXA</strong> a successful event.</p>     </td></tr>      <!-- Thank You -->     <tr><td class=\"content-cell\" style=\"padding:0 0 12px 0;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:400;line-height:22px;color:#333333;\">Thank You!</p>     </td></tr>    </table>  </td></tr> </table> </td></tr> </table>  <!-- ===== FOOTER ===== --> <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"> <tr><td align=\"center\" style=\"padding:0 10px;\"> <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" style=\"width:600px;max-width:600px;background-color:#00496C;\"> <tr><td class=\"footer-pad\" style=\"padding:30px 50px;\">    <!-- Contact Us heading -->   <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">   <tr><td style=\"padding:0 0 16px 0;text-align:center;\">     <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:18px;font-weight:800;line-height:24px;color:#F3F3F3;text-align:center;\">Contact Us</p>   </td></tr>   </table>    <!-- Three contacts -->   <table role=\"presentation\" class=\"footer-inner\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-bottom:1px solid #F3F3F3;padding-bottom:20px;margin-bottom:16px;\">   <tr class=\"contact-row\">     <td valign=\"top\" width=\"33%\" style=\"width:33%;text-align:center;padding:0 4px 0 0;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:22px;color:#F3F3F3;text-align:center;\">         <strong>Hashan Hirantha</strong><br/>         <em>Project Chair</em><br/>         <em>070 566 5091</em>       </p>     </td>     <td valign=\"top\" width=\"33%\" style=\"width:33%;text-align:center;padding:0 4px;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:22px;color:#F3F3F3;text-align:center;\">         <strong>Niluni Sandunika</strong><br/>         <em>Secretary</em><br/>         <em>076 776 0746</em>       </p>     </td>     <td valign=\"top\" width=\"33%\" style=\"width:33%;text-align:center;padding:0 0 0 4px;\">       <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:22px;color:#F3F3F3;text-align:center;\">         <strong>Poorna Sachinthana</strong><br/>         <em>Finance Head</em><br/>         <em>070 210 6391</em>       </p>     </td>   </tr>   </table>    <!-- Tagline -->   <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">   <tr><td style=\"padding:16px 0 0 0;text-align:center;\">     <p style=\"margin:0;font-family:Roboto,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:400;line-height:20px;color:#F3F3F3;text-align:center;\">Association of Computing Students &#8211; NEXA Organizing Committee</p>   </td></tr>   </table>  </td></tr> </table> </td></tr> </table>  <!-- Outer bottom spacer --> <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"> <tr><td class=\"outer-spacer\" style=\"height:40px;line-height:40px;font-size:1px;\">&nbsp;</td></tr> </table>  <div style=\"display:none;white-space:nowrap;font:15px courier;line-height:0;\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div> </body> </html> ",
+                "options": {
+                    "appendAttribution": false,
+                    "attachmentsUi": {
+                        "attachmentsBinary": [
+                            {}
+                        ]
+                    }
+                }
+            },
+            "type": "n8n-nodes-base.gmail",
+            "typeVersion": 2.2,
+            "position": [
+                -880,
+                -256
+            ],
+            "id": "3c1cd1f0-7310-4754-8e64-839ac41e0b31",
+            "name": "Send Gmail",
+            "webhookId": "8711ac1f-9dd0-4502-9021-b9746075cb84",
+            "retryOnFail": false,
+            "waitBetweenTries": 2000,
+            "maxTries": null,
+            "credentials": {
+                "gmailOAuth2": {
+                    "id": "M0rKmm3rIx7O7Q9m",
+                    "name": "Gmail account 2"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "update",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "First Mail date": "={{ $today.format('yyyy-MM-dd') }}",
+                        " First Mail ": "Sent",
+                        "Company Email": "={{ $('Get Pending Rows').item.json['Company Email'] }}",
+                        "2nd mail date": "={{ new Date(Date.now() + 3*24*60*60*1000).toISOString().slice(0,10) }}",
+                        "    2nd mail Status": "Not send",
+                        "Thread Id": "={{ $('Send Gmail').item.json.threadId }}",
+                        "First mail te": "Yes",
+                        "   Mail response": "No response"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Thread Id",
+                            "displayName": "Thread Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First mail te",
+                            "displayName": "First mail te",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "row_number",
+                            "displayName": "row_number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "number",
+                            "canBeUsedToMatch": true,
+                            "readOnly": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -672,
+                -256
+            ],
+            "id": "5f6b01e1-08b5-495e-9c7f-76cff570a697",
+            "name": "Mark as Sent",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "minutes",
+                            "minutesInterval": 3
+                        }
+                    ]
+                }
+            },
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                -1504,
+                -256
+            ],
+            "id": "9895184f-01cd-4263-adda-e0f76fd4edfa",
+            "name": "Schedule Trigger1"
+        },
+        {
+            "parameters": {
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "filtersUI": {
+                    "values": [
+                        {
+                            "lookupColumn": "   Mail response",
+                            "lookupValue": "Accept"
+                        },
+                        {
+                            "lookupColumn": "Accept send human",
+                            "lookupValue": "No"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -1312,
+                384
+            ],
+            "id": "36be3908-cc54-4591-b0d2-0daf1455bff2",
+            "name": "Get row(s) in sheet",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "chatId": "-5205321471",
+                "text": "=\"🎉 Congratulations!               \nWe got an ACCEPTANCE from {{ $json['Company Name'] }}:        \nThis was pitched by:    {{ $json['Picth by'] }}      \nEmail : {{ $json['Company Email'] }}\nCheck Mail . Hurry up!!!!\nTime to follow up! 🚀\"",
+                "additionalFields": {
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                -1104,
+                384
+            ],
+            "id": "9d5747af-3f08-4efb-85f9-7f3ad8bbbf72",
+            "name": "Send a text message1",
+            "webhookId": "0e5f6d58-d0c9-4148-b97b-26c6cdc17073",
+            "credentials": {
+                "telegramApi": {
+                    "id": "lDDQXO7q6qhrHGPo",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "hours"
+                        }
+                    ]
+                }
+            },
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                -1520,
+                608
+            ],
+            "id": "bf65617d-a199-425c-96b4-982850f1ede4",
+            "name": "Schedule Trigger2"
+        },
+        {
+            "parameters": {
+                "chatId": "-5205321471",
+                "text": "=\"⚠️ Update: Rejection Received\n\nCompany Name: {{ $json['Company Name'] }}\nPitched by: {{ $json['Picth by'] }}\nEmail: {{ $json['Company Email'] }}\n\nStatus updated to: REJECT 🚩\nDon't worry, let's move on to the next lead! 🚀\"",
+                "additionalFields": {
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                -1104,
+                608
+            ],
+            "id": "aa01ca88-9c99-4c0a-b7f8-2e2ab17e12ab",
+            "name": "Send a text message2",
+            "webhookId": "0e5f6d58-d0c9-4148-b97b-26c6cdc17073",
+            "credentials": {
+                "telegramApi": {
+                    "id": "lDDQXO7q6qhrHGPo",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "hours"
+                        }
+                    ]
+                }
+            },
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                -1536,
+                848
+            ],
+            "id": "9fd466d4-377f-45e2-8228-5fcb3f709d3f",
+            "name": "Schedule Trigger3"
+        },
+        {
+            "parameters": {
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "filtersUI": {
+                    "values": [
+                        {
+                            "lookupColumn": "   Mail response",
+                            "lookupValue": "Pending"
+                        },
+                        {
+                            "lookupColumn": "Human send",
+                            "lookupValue": "No"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -1344,
+                848
+            ],
+            "id": "3012579a-cbc6-4ea2-9a3a-9f03e06ed868",
+            "name": "Get row(s) in sheet2",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "chatId": "-5205321471",
+                "text": "=\"⏳ Status: PENDING (Will let us know)\n\nCompany Name: {{ $('Get row(s) in sheet2').item.json['Company Name'] }}\nPitched by: {{ $('Get row(s) in sheet2').item.json['Picth by'] }}\nEmail: {{ $json['Company Email'] }}\n\nStatus updated to: PENDING 🟡\nResponse Date: {{ $today.format('yyyy-MM-dd') }}\n\n💡 Reminder: Schedule a follow-up call/email for next week ({{ $today.plus({days: 7}).format('yyyy-MM-dd') }}). \nKeep pushing! 🚀\"",
+                "additionalFields": {
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                -928,
+                848
+            ],
+            "id": "e4343aba-699b-4fcb-aea7-653e9312b8b6",
+            "name": "Send a text message3",
+            "webhookId": "0e5f6d58-d0c9-4148-b97b-26c6cdc17073",
+            "credentials": {
+                "telegramApi": {
+                    "id": "lDDQXO7q6qhrHGPo",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "content": "If Accepted",
+                "height": 240,
+                "width": 928
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+                -1568,
+                304
+            ],
+            "typeVersion": 1,
+            "id": "1ef0e544-af40-42f3-aa3e-729dbe1883ec",
+            "name": "Sticky Note"
+        },
+        {
+            "parameters": {
+                "content": "If rejected\n",
+                "height": 256,
+                "width": 928,
+                "color": 3
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+                -1568,
+                544
+            ],
+            "typeVersion": 1,
+            "id": "b18e58db-4ca0-4433-9cdb-ff8235832c6c",
+            "name": "Sticky Note1"
+        },
+        {
+            "parameters": {
+                "content": "After phone call",
+                "height": 240,
+                "width": 2192,
+                "color": 6
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+                -1568,
+                -336
+            ],
+            "typeVersion": 1,
+            "id": "b59171be-b9ca-43d7-8cfb-4170e7aabc78",
+            "name": "Sticky Note4"
+        },
+        {
+            "parameters": {
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "filtersUI": {
+                    "values": [
+                        {
+                            "lookupColumn": "   Mail response",
+                            "lookupValue": "Reject"
+                        },
+                        {
+                            "lookupColumn": "Reject send to human",
+                            "lookupValue": "No"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -1296,
+                608
+            ],
+            "id": "eb00029c-250a-4e9b-91fe-b09cedcdc94d",
+            "name": "Get row(s) in sheet1",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "update",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Company Email": "={{ $json['Company Email'] }}",
+                        "2nd mail date": "={{ $today.plus({days: 7}).format('yyyy-MM-dd') }}"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "row_number",
+                            "displayName": "row_number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "number",
+                            "canBeUsedToMatch": true,
+                            "readOnly": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -1136,
+                848
+            ],
+            "id": "32b65277-5331-446c-9688-48bdc2ae69b7",
+            "name": "Update row in sheet",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "content": "If pending\n",
+                "height": 208,
+                "width": 1104
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+                -1568,
+                800
+            ],
+            "typeVersion": 1,
+            "id": "460b6bb9-dd1c-477a-8a27-cdbeefb1a5e3",
+            "name": "Sticky Note5"
+        },
+        {
+            "parameters": {
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "filtersUI": {
+                    "values": [
+                        {
+                            "lookupColumn": "2nd mail date",
+                            "lookupValue": "={{ $today.format('yyyy-MM-dd') }}"
+                        },
+                        {
+                            "lookupColumn": "    2nd mail Status",
+                            "lookupValue": "Not send"
+                        },
+                        {
+                            "lookupColumn": "   Mail response",
+                            "lookupValue": "No response"
+                        }
+                    ]
+                },
+                "combineFilters": "=AND",
+                "options": {
+                    "returnFirstMatch": true
+                }
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -384,
+                -32
+            ],
+            "id": "475677d5-18d0-42da-919a-198506c516ee",
+            "name": "Mark as Sent1",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "reply",
+                "messageId": "19d198f50479b4c4",
+                "emailType": "text",
+                "message": "=Dear Sir/Madam,  \n\nI hope this message finds you well.  \n\nWe recently shared our sponsorship proposal for NEXA, the one-day Tech Talk Series organized by the Association of Computing Students (ACS), University of Sri Jayewardenepura. I am following up to kindly inquire if you have had the opportunity to review it.  \n\nNEXA brings together talented students, industry professionals, and technology enthusiasts to explore emerging technologies. Sponsoring NEXA offers your organization:  \n\n•Visibility and branding among future tech leaders and professionals. \n•Networking opportunities with students and industry experts. \n•Recognition as a key supporter of innovation and education in Sri Lanka.  \n\nWe would be honored to have your organization’s support. Please note that sponsorship terms and packages are flexible and negotiable to best suit your requirements, and we are happy to provide any additional information or materials you may need to facilitate your decision.  \n\nThank you very much for your time and consideration. We look forward to your positive response.  \n\nWarm regards,\nNiluni Sandunika\nSecretary\nNEXA\nAssociation of Computing Students (ACS)\nUniversity of Sri Jayewardenepura",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.gmail",
+            "typeVersion": 2.2,
+            "position": [
+                -160,
+                -32
+            ],
+            "id": "aec8539f-fa25-4915-afc2-6042851a7cc4",
+            "name": "Reply to a message",
+            "webhookId": "1bb52818-f381-463b-913a-1f995032c245",
+            "credentials": {
+                "gmailOAuth2": {
+                    "id": "x0MBQSdk0cdj1PjO",
+                    "name": "Gmail account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "appendOrUpdate",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Company Email": "={{ $('Mark as Sent1').item.json['Company Email'] }}",
+                        "    2nd mail Status": "Sent",
+                        "Final Mail": "={{ new Date(Date.now() + 7*24*60*60*1000).toISOString().slice(0,10) }}"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Thread Id",
+                            "displayName": "Thread Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                64,
+                -32
+            ],
+            "id": "f37cd555-7c84-42f2-bff4-f2eaa2d149af",
+            "name": "Update",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "minutes"
+                        }
+                    ]
+                }
+            },
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.3,
+            "position": [
+                -576,
+                -32
+            ],
+            "id": "bfd7e6ab-204b-49a4-9d50-9adf9df7f0c4",
+            "name": "Schedule Trigger4"
+        },
+        {
+            "parameters": {
+                "content": "2nd mail sent no respond\n",
+                "height": 208,
+                "width": 1296,
+                "color": 6
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+                -624,
+                -96
+            ],
+            "typeVersion": 1,
+            "id": "8129a5e0-7b07-4220-b993-125277ba0c77",
+            "name": "Sticky Note2"
+        },
+        {
+            "parameters": {
+                "chatId": "-5205321471",
+                "text": "=🔔 **Follow-up Reminder Sent!**\n\n🏢 **Company:** {{ $('Mark as Sent1').item.json['Company Name'] }}\n👤 **Pitched by:** {{ $('Mark as Sent1').item.json['Picth by'] }}\n📧 **Email:** {{ $('Mark as Sent1').item.json['Company Email'] }}\n📅 **Original Date:** \n📝 **Status:** 2nd Mail (Reminder) sent successfully via Thread.\n\n✅ Sheet updated with today's date.\n🚀 Keep it up!",
+                "additionalFields": {
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                272,
+                -32
+            ],
+            "id": "33d882e4-0aaf-45eb-be4d-f6d28f20c807",
+            "name": "Send a text message4",
+            "webhookId": "dd01978b-bad1-439d-a4a2-8dbde520b9a2",
+            "credentials": {
+                "telegramApi": {
+                    "id": "lDDQXO7q6qhrHGPo",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "filtersUI": {
+                    "values": [
+                        {
+                            "lookupColumn": "2nd mail date",
+                            "lookupValue": "={{ $today.format('yyyy-MM-dd') }}"
+                        },
+                        {
+                            "lookupColumn": "    2nd mail Status",
+                            "lookupValue": "Not send"
+                        },
+                        {
+                            "lookupColumn": "   Mail response",
+                            "lookupValue": "Pending"
+                        }
+                    ]
+                },
+                "combineFilters": "=AND",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -384,
+                160
+            ],
+            "id": "2b0af10e-a169-499f-a4f6-f5ce8653c3f5",
+            "name": "Mark as Sent2",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "reply",
+                "messageId": "={{ $json['Thread Id'] }}",
+                "emailType": "text",
+                "message": "=Dear Sir/Madam,\n\nI hope you are doing well.\n\nI am writing to follow up on our previous email regarding the sponsorship proposal for NEXA, the one-day Tech Talk Series organized by the Association of Computing Students (ACS), University of Sri Jayewardenepura. We greatly appreciate your consideration and understand that your team may need time to review the proposal.\n\nNEXA offers a valuable opportunity for your organization to:\n\n•Gain visibility among future technology leaders and professionals.\n•Engage with students and industry experts through meaningful networking.\n•Be recognized as a key supporter of innovation and education in Sri Lanka.\n\nCould you kindly provide us with an update on your decision at your earliest convenience? Please note that sponsorship terms and packages are flexible and negotiable to best suit your requirements, and we are happy to provide any additional information or materials to assist your evaluation.\n\nYour support will play a pivotal role in making NEXA a successful and impactful event, and we sincerely hope to count your organization among our esteemed partners.\n\nThank you very much for your time and consideration. We look forward to your response.\n\nWarm regards,\nNiluni Sandunika\nSecretary\nNEXA\nAssociation of Computing Students (ACS)\nUniversity of Sri Jayewardenepura",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.gmail",
+            "typeVersion": 2.2,
+            "position": [
+                -160,
+                160
+            ],
+            "id": "9371ad90-c406-4cb5-88f4-cb738f584c7a",
+            "name": "Reply to a message1",
+            "webhookId": "1bb52818-f381-463b-913a-1f995032c245",
+            "credentials": {
+                "gmailOAuth2": {
+                    "id": "x0MBQSdk0cdj1PjO",
+                    "name": "Gmail account"
+                }
+            }
+        },
+        {
+            "parameters": {},
+            "type": "n8n-nodes-base.wait",
+            "typeVersion": 1.1,
+            "position": [
+                464,
+                160
+            ],
+            "id": "5dd7fc92-03f0-4085-b829-5e0dc8e470f3",
+            "name": "Wait1",
+            "webhookId": "e4643821-b695-4df8-b153-c8ca3894a27e"
+        },
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "hours",
+                            "hoursInterval": 2,
+                            "triggerAtMinute": 15
+                        }
+                    ]
+                }
+            },
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.3,
+            "position": [
+                -576,
+                160
+            ],
+            "id": "20bcdd37-71f1-4ed4-916a-89e4b0265fcc",
+            "name": "Schedule Trigger5"
+        },
+        {
+            "parameters": {
+                "chatId": "-5205321471",
+                "text": "=🔔 **Follow-up Reminder Sent!**\n\n🏢 **Company:** {{ $('Mark as Sent2').item.json['Company Name'] }}\n👤 **Pitched by:** {{ $('Mark as Sent2').item.json['Picth by'] }}\n📧 **Email:** {{ $('Mark as Sent2').item.json['Company Email'] }}\n📅 **Original Date:** \n📝 **Status:** 2nd Mail (Reminder) sent successfully via Thread.\n\n✅ Sheet updated with today's date.\n🚀 Keep it up!",
+                "additionalFields": {
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                288,
+                160
+            ],
+            "id": "14e7bc6a-c441-44a6-bef7-7ed26d3ebc0b",
+            "name": "Send a text message5",
+            "webhookId": "dd01978b-bad1-439d-a4a2-8dbde520b9a2",
+            "credentials": {
+                "telegramApi": {
+                    "id": "lDDQXO7q6qhrHGPo",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "appendOrUpdate",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Company Email": "={{ $('Mark as Sent2').item.json['Company Email'] }}",
+                        "    2nd mail Status": "Sent",
+                        "Final Mail": "={{ new Date(Date.now() + 7*24*60*60*1000).toISOString().slice(0,10) }}"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Thread Id",
+                            "displayName": "Thread Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                64,
+                160
+            ],
+            "id": "b180a7ce-975d-4e88-bac9-e1fe99ae6f34",
+            "name": "Update1",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "content": "2nd mail if pending",
+                "height": 224,
+                "width": 1296,
+                "color": 7
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+                -624,
+                112
+            ],
+            "typeVersion": 1,
+            "id": "2cf8cc41-6ca4-497f-981f-b4a2a7490eb1",
+            "name": "Sticky Note7"
+        },
+        {
+            "parameters": {
+                "operation": "update",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Company Email": "={{ $('Get row(s) in sheet').item.json['Company Email'] }}",
+                        "Accept send human": "Yes"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Thread Id",
+                            "displayName": "Thread Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "row_number",
+                            "displayName": "row_number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "number",
+                            "canBeUsedToMatch": true,
+                            "readOnly": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -896,
+                384
+            ],
+            "id": "bc66183a-03e8-443f-90b9-5dc536cae4c6",
+            "name": "Update row in sheet1",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "update",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Company Email": "={{ $('Get row(s) in sheet1').item.json['Company Email'] }}",
+                        "Reject send to human": "Yes"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Thread Id",
+                            "displayName": "Thread Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "row_number",
+                            "displayName": "row_number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "number",
+                            "canBeUsedToMatch": true,
+                            "readOnly": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -912,
+                608
+            ],
+            "id": "69f305fd-95d4-4a39-b0f2-b508c8453497",
+            "name": "Update row in sheet2",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "update",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Company Email": "={{ $('Get row(s) in sheet2').item.json['Company Email'] }}",
+                        "Human send": "Yes"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Thread Id",
+                            "displayName": "Thread Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "row_number",
+                            "displayName": "row_number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "number",
+                            "canBeUsedToMatch": true,
+                            "readOnly": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                -736,
+                848
+            ],
+            "id": "18c9c756-8f6d-4422-9c6c-da57977f8647",
+            "name": "Update row in sheet3",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "chatId": "-5205321471",
+                "text": "=📩 *First Pitch Sent!*\n🏢 *Company:* {{ $('Get Pending Rows').item.json['Company Name'] }}\n📧 *To:* {{ $('Get Pending Rows').item.json['Company Email'] }}\n👤 *By:* {{ $('Get Pending Rows').item.json['Picth by'] }}\n✅ First Mail date updated.\n🆔 Thread ID saved for follow-ups.\n🚀 Good luck with the sponsorship!",
+                "additionalFields": {
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                -352,
+                -272
+            ],
+            "id": "d64ca619-4cbd-4fa8-ba5f-de19d85af22e",
+            "name": "Send a text message6",
+            "webhookId": "7e2db50a-ec6a-4b20-be0e-8514248c0981",
+            "credentials": {
+                "telegramApi": {
+                    "id": "lDDQXO7q6qhrHGPo",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "hours"
+                        }
+                    ]
+                }
+            },
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                -1520,
+                384
+            ],
+            "id": "dfd4928a-191a-482c-b848-d58e0980c45d",
+            "name": "Schedule Trigger"
+        },
+        {
+            "parameters": {
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "filtersUI": {
+                    "values": [
+                        {
+                            "lookupColumn": "   Mail response",
+                            "lookupValue": "No response"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "id": "31eea5a4-8d70-4ad7-a241-40abb7108b13",
+            "name": "Get All Rows",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.5,
+            "position": [
+                -1392,
+                -48
+            ],
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": false,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                    },
+                    "conditions": [
+                        {
+                            "id": "filter-condition",
+                            "leftValue": "={{ $json[\"Company Email\"] }}",
+                            "rightValue": "={{ $('Gmail Trigger1').item.json.from.value[0].address }}",
+                            "operator": {
+                                "type": "string",
+                                "operation": "equals"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                },
+                "options": {
+                    "ignoreCase": true
+                }
+            },
+            "id": "6f375ece-e774-4a46-bf05-ce3fc2ef188b",
+            "name": "Filter Specific Row",
+            "type": "n8n-nodes-base.filter",
+            "typeVersion": 2.2,
+            "position": [
+                -1216,
+                -48
+            ]
+        },
+        {
+            "parameters": {
+                "pollTimes": {
+                    "item": [
+                        {
+                            "mode": "everyHour"
+                        }
+                    ]
+                },
+                "simple": false,
+                "filters": {},
+                "options": {}
+            },
+            "id": "95d6580e-bb5a-449b-a85e-232a28e039ff",
+            "name": "Gmail Trigger1",
+            "type": "n8n-nodes-base.gmailTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                -1568,
+                -48
+            ],
+            "credentials": {
+                "gmailOAuth2": {
+                    "id": "M0rKmm3rIx7O7Q9m",
+                    "name": "Gmail account 2"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "promptType": "define",
+                "text": "=You are an automation expert. Your job is to analyze the BODY of an incoming email and match it with the correct company from the Google Sheet.\n\n### INPUT DATA:\n- Sender: {{ $node[\"Gmail Trigger1\"].json[\"from\"][\"value\"][0][\"address\"] }}\n- Email Body Content (Cleaned): {{ $node[\"Gmail Trigger1\"].json[\"text\"].split(/On.*wrote:/)[0].trim() }}\n\n### CONTEXT FROM SHEET:\n- Company: {{ $json[\"Company Name\"] }}\n- Pitched By: {{ $json[\"Picth by\"] }}\n\n---\n\n### CORE LOGIC: ANALYZE EMAIL BODY\nRead the \"Email Body Content\" carefully to identify the sender's intent:\n\n1. **BOUNCE / ERROR:** If the body indicates a failed delivery (e.g., \"Address not found\", \"Message blocked\", \"Mailer-Daemon\"), then:\n   ➡ USE Telegram Tool: Send \"❌ Delivery Failed for {{ $json[\"Company Name\"] }} ({{ $node[\"Gmail Trigger1\"].json[\"from\"][\"value\"][0][\"address\"] }}). Please check the email address in the sheet.\"\n   ➡ STOP.\n\n2. **REJECT INTENT:** If they say \"No\", \"Not interested\", \"Maybe next time\", \"Cannot sponsor right now\", or \"Unfortunately...\":\n   ➡ USE Google Sheets Tool: Update \"Mail response\" to \"Reject\" and \"Response Date\" to \"{{ $today.format('yyyy-MM-dd') }}\".\n\n3. **PENDING / WAIT INTENT:** If they say \"Will check\", \"Forwarded to management\", \"Get back to you later\", \"Under review\", or \"Send more details\":\n   ➡ USE Google Sheets Tool: Update \"Mail response\" to \"Pending\" and \"Response Date\" to \"{{ $today.format('yyyy-MM-dd') }}\".\n\n4. **ACCEPT / INTERESTED INTENT 🔥:** If they say \"Yes\", \"Interested\", \"Send the package\", \"Let's meet\", \"Sounds great\", or \"Happy to support\":\n   ➡ USE Google Sheets Tool: Update \"Mail response\" to \"Accept\" and \"Response Date\" to \"{{ $today.format('yyyy-MM-dd') }}\".\n   ➡ USE Telegram Tool: Send \"🔥 NEW SPONSOR ALERT!\\nCompany: {{ $json[\"Company Name\"] }}\\nEmail: {{ $node[\"Gmail Trigger1\"].json[\"from\"][\"value\"][0][\"address\"] }}\\nPitched by: {{ $json[\"Picth by\"] }}\\nCheck your inbox now! 🚀\"\n\n---\n\n### CRITICAL RULES:\n- Only update the row where \"Company Email\" matches the sender.\n- If the sender is NOT found in the provided sheet context, notify via Telegram: \"⚠️ Unknown sender: {{ $node[\"Gmail Trigger1\"].json[\"from\"][\"value\"][0][\"address\"] }}\".\n- Use professional tone in any automated responses if required.",
+                "options": {}
+            },
+            "id": "53a7f61a-d3a8-45c3-a0ba-d2d8c0ea4b38",
+            "name": "AI Agent1",
+            "type": "@n8n/n8n-nodes-langchain.agent",
+            "typeVersion": 1.6,
+            "position": [
+                -1056,
+                -48
+            ]
+        },
+        {
+            "parameters": {
+                "options": {}
+            },
+            "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+            "typeVersion": 1,
+            "position": [
+                -1216,
+                144
+            ],
+            "id": "a09f99b2-61f6-4f11-bd31-7b7e0d67ec59",
+            "name": "Google Gemini Chat Model1",
+            "credentials": {
+                "googlePalmApi": {
+                    "id": "hTVFzq9KEcpZ5Nek",
+                    "name": "Google Gemini(PaLM) Api account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "update",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU",
+                    "mode": "list",
+                    "cachedResultName": "Untitled spreadsheet",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "gid=0",
+                    "mode": "list",
+                    "cachedResultName": "Sheet1",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F9OvjqD5mVpPOjBWLGh8XinRYmRKL1ZIvI3PspB0fNU/edit#gid=0"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Company Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Company_Email__using_to_match_', ``, 'string') }}",
+                        "Response Date": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Response_Date', ``, 'string') }}",
+                        "   Mail response": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('___Mail_response', ``, 'string') }}"
+                    },
+                    "matchingColumns": [
+                        "Company Email"
+                    ],
+                    "schema": [
+                        {
+                            "id": "Company Name",
+                            "displayName": "Company Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Company Email",
+                            "displayName": "Company Email",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "Picth by",
+                            "displayName": "Picth by",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Thread Id",
+                            "displayName": "Thread Id",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First Mail date",
+                            "displayName": "First Mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": " First Mail ",
+                            "displayName": " First Mail ",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Response Date",
+                            "displayName": "Response Date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "   Mail response",
+                            "displayName": "   Mail response",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": false
+                        },
+                        {
+                            "id": "2nd mail date",
+                            "displayName": "2nd mail date",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "    2nd mail Status",
+                            "displayName": "    2nd mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail",
+                            "displayName": "Final Mail",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final Mail Status",
+                            "displayName": "Final Mail Status",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Human send",
+                            "displayName": "Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "2nd mail Human send",
+                            "displayName": "2nd mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Final mail Human send",
+                            "displayName": "Final mail Human send",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Accept send human",
+                            "displayName": "Accept send human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "Reject send to human",
+                            "displayName": "Reject send to human",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "More detail notify",
+                            "displayName": "More detail notify",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "First mail te",
+                            "displayName": "First mail te",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true,
+                            "removed": true
+                        },
+                        {
+                            "id": "row_number",
+                            "displayName": "row_number",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "number",
+                            "canBeUsedToMatch": true,
+                            "readOnly": true,
+                            "removed": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheetsTool",
+            "typeVersion": 4.7,
+            "position": [
+                -928,
+                144
+            ],
+            "id": "40a8b34b-92a5-472e-9846-9b3b79974b87",
+            "name": "Update row in sheet in Google Sheets1",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "PHwKBvvAgwRN57s6",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "chatId": "-5205321471",
+                "text": "={{ $json.output }}",
+                "replyMarkup": "={{ $json.output }}",
+                "forceReply": {},
+                "replyKeyboardOptions": {},
+                "replyKeyboardRemove": {},
+                "additionalFields": {
+                    "appendAttribution": false
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                -768,
+                -48
+            ],
+            "id": "84ae4085-b891-4fd8-8397-f8f07881751d",
+            "name": "Send a text message7",
+            "webhookId": "d3d986f0-0618-4b1e-a923-735d49eafc16",
+            "credentials": {
+                "telegramApi": {
+                    "id": "lDDQXO7q6qhrHGPo",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "content": "Auto Reply",
+                "height": 384,
+                "width": 944,
+                "color": "#258335"
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+                -1584,
+                -80
+            ],
+            "typeVersion": 1,
+            "id": "25fde97e-24f6-4c4e-b543-673a9e5dbbe6",
+            "name": "Sticky Note3"
+        },
+        {
+            "parameters": {
+                "amount": 30
+            },
+            "type": "n8n-nodes-base.wait",
+            "typeVersion": 1.1,
+            "position": [
+                464,
+                -32
+            ],
+            "id": "6319dec3-db07-4bbe-8ead-255ff56c40b7",
+            "name": "Wait",
+            "webhookId": "d8bf16cd-71bf-4729-bf89-bda15111e475"
+        }
+    ],
+    "pinData": {},
+    "connections": {
+        "Get Pending Rows": {
+            "main": [
+                [
+                    {
+                        "node": "Download PDF",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Download PDF": {
+            "main": [
+                [
+                    {
+                        "node": "Send Gmail",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Send Gmail": {
+            "main": [
+                [
+                    {
+                        "node": "Mark as Sent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Schedule Trigger1": {
+            "main": [
+                [
+                    {
+                        "node": "Get Pending Rows",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get row(s) in sheet": {
+            "main": [
+                [
+                    {
+                        "node": "Send a text message1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Schedule Trigger2": {
+            "main": [
+                [
+                    {
+                        "node": "Get row(s) in sheet1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Schedule Trigger3": {
+            "main": [
+                [
+                    {
+                        "node": "Get row(s) in sheet2",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get row(s) in sheet2": {
+            "main": [
+                [
+                    {
+                        "node": "Update row in sheet",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get row(s) in sheet1": {
+            "main": [
+                [
+                    {
+                        "node": "Send a text message2",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Update row in sheet": {
+            "main": [
+                [
+                    {
+                        "node": "Send a text message3",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Mark as Sent1": {
+            "main": [
+                [
+                    {
+                        "node": "Reply to a message",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Reply to a message": {
+            "main": [
+                [
+                    {
+                        "node": "Update",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Update": {
+            "main": [
+                [
+                    {
+                        "node": "Send a text message4",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Schedule Trigger4": {
+            "main": [
+                [
+                    {
+                        "node": "Mark as Sent1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Mark as Sent2": {
+            "main": [
+                [
+                    {
+                        "node": "Reply to a message1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Reply to a message1": {
+            "main": [
+                [
+                    {
+                        "node": "Update1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Wait1": {
+            "main": [
+                []
+            ]
+        },
+        "Schedule Trigger5": {
+            "main": [
+                [
+                    {
+                        "node": "Mark as Sent2",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Update1": {
+            "main": [
+                [
+                    {
+                        "node": "Send a text message5",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Send a text message1": {
+            "main": [
+                [
+                    {
+                        "node": "Update row in sheet1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Send a text message2": {
+            "main": [
+                [
+                    {
+                        "node": "Update row in sheet2",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Send a text message3": {
+            "main": [
+                [
+                    {
+                        "node": "Update row in sheet3",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Send a text message6": {
+            "main": [
+                []
+            ]
+        },
+        "Schedule Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Get row(s) in sheet",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get All Rows": {
+            "main": [
+                [
+                    {
+                        "node": "Filter Specific Row",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Filter Specific Row": {
+            "main": [
+                [
+                    {
+                        "node": "AI Agent1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Gmail Trigger1": {
+            "main": [
+                [
+                    {
+                        "node": "Get All Rows",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Google Gemini Chat Model1": {
+            "ai_languageModel": [
+                [
+                    {
+                        "node": "AI Agent1",
+                        "type": "ai_languageModel",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Update row in sheet in Google Sheets1": {
+            "ai_tool": [
+                [
+                    {
+                        "node": "AI Agent1",
+                        "type": "ai_tool",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "AI Agent1": {
+            "main": [
+                [
+                    {
+                        "node": "Send a text message7",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Send a text message4": {
+            "main": [
+                [
+                    {
+                        "node": "Wait",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Send a text message5": {
+            "main": [
+                [
+                    {
+                        "node": "Wait1",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Mark as Sent": {
+            "main": [
+                []
+            ]
+        }
+    },
+    "active": false,
+    "settings": {
+        "executionOrder": "v1",
+        "binaryMode": "separate"
+    },
+    "versionId": "ad640a22-0d31-4672-a8ff-c03e94a48af4",
+    "meta": {
+        "templateCredsSetupCompleted": true,
+        "instanceId": "01020aac0f4ad9add3ef1a6dcc6dfb9bedf97851932f4544d68e71020a50503c"
+    },
+    "id": "X9QjL7FEau0msqej",
+    "tags": []
+}
